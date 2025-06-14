@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <style>
+      body {
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 60px auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+      }
+
+      p {
+        margin: 0.75rem 0;
+        font-size: 16px;
+        color: #444;
+      }
+
+      strong {
+        color: #111;
+      }
+
+      .logout-button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .logout-button:hover {
+        background-color: #c9302c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Profile</h1>
+
+      <div>
+        <p><strong>ID:</strong> <%= user.id %></p>
+        <p><strong>Username:</strong> <%= user.username %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <p>
+          <strong>Created At:</strong> <%= new
+          Date(user.created_at).toLocaleString() %>
+        </p>
+      </div>
+
+      <a href="/logout" class="logout-button">Logout</a>
+    </div>
+
+    <script>
+      // Token expiry warning
+      setTimeout(() => {
+        alert("Your session will expire in 1 minute. Please save any work.");
+      }, 14 * 60 * 1000); // 14 minutes
+    </script>
+  </body>
+</html>
