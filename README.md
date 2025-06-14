@@ -52,6 +52,5 @@ auth-system/
 ## Getting Started
 1. Clone the repository
 2. Install Dependencies
-3. Add the .env file attached in the mail
 4. Start the server using the command "npm run start"
 5. Visit http://localhost:3000 to start using the app.
